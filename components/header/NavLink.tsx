@@ -1,7 +1,10 @@
-import { cn } from "@/lib/utils";
+"use client";
 
 import Link from "next/link";
 import { UrlObject } from "url";
+import { usePathname } from "next/navigation";
+
+import { cn } from "@/lib/utils";
 
 type NavLinkHref<Route> =
     | UrlObject
@@ -13,6 +16,9 @@ export function NavLink<Route>({
     link: NavLinkHref<Route>;
     children?: React.ReactNode;
 }) {
+    // This needs to be a client component to use the usePathname hook
+    const pathname = usePathname();
+
     function getFallback(link: NavLinkHref<Route>): string {
         if (typeof link === "string") {
             return link.slice(1);
@@ -32,11 +38,11 @@ export function NavLink<Route>({
                     "text-2xl",
                     "relative",
                     "w-fit",
-                    "hover-underline",
-                    "transition-colors"
+                    "hover-underline"
                 )}
                 prefetch
                 href={link}
+                data-active={link === pathname}
             >
                 {children ?? getFallback(link)}
             </Link>

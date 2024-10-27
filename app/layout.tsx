@@ -1,7 +1,7 @@
 import "@/app/ui/global.css";
 import { inter } from "@/app/ui/fonts";
 import { cn } from "@/lib/utils";
-import { Nav } from "@/components/nav/Nav";
+import Header from "@/components/header/Header";
 
 export default function RootLayout({
     children,
@@ -11,10 +11,8 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={cn(inter.className, "antialiased")}>
-                <header className={cn("my-10")}>
-                    <Nav />
-                </header>
-                {children}
+                <Header />
+                <div className={cn("container", "mx-auto")}>{children}</div>
             </body>
         </html>
     );
