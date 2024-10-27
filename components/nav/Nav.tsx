@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export const Nav = () => (
     <nav>
-        <ul className={cn("flex", "gap-8")}>
+        <ul className={cn("flex", "justify-between", "w-[80vw]", "mx-auto")}>
             <NavLink link="/">Home</NavLink>
             <NavLink link="/services" />
             <NavLink link="/contact" />

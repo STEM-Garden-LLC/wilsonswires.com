@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={cn(inter.className, "antialiased", "px-20")}>
+            <body className={cn(inter.className, "antialiased")}>
                 <header className={cn("my-10")}>
                     <Nav />
                 </header>
