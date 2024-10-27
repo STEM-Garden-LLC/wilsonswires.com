@@ -87,31 +87,3 @@ input[type="number"]::-webkit-outer-spin-button {
     @apply bg-background text-foreground;
     }
 }
-
-/* TODO: Transform this into tailwind classes */
-.hover-underline {
-  position: relative;
-
-  &:hover, &:active, &:focus-within, &:focus, &[data-active='true'] {
-    &::after {
-      transform: scaleX(1);
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-
-    background-color: hsl(var(--logo-yellow-shaded));
-
-    height: 2px;
-    width: 100%;
-
-    transform: scaleX(0);
-
-    transition: transform 200ms ease-in-out;
-    transform-origin: center;
-  }
-}

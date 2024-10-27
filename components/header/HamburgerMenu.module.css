@@ -1,0 +1,25 @@
+/*
+  Tailwind makes animations that require a lot of pseudo classes that
+  depend on parent selectors more difficult. I would like to collocate
+  this code closer to the component that uses it, but I think it's eaiser
+  not to use tailwind for this activity.
+*/
+.hamburgerMenu {
+    & > div {
+      transition: transform 200ms ease-in-out;
+    }
+    &[aria-expanded='true'] {
+      & > div:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+      }
+  
+      & > div:nth-child(2) {
+        transform: scaleX(0);
+      }
+  
+      & > div:nth-child(3)  {
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+      }
+    }
+  }
+  

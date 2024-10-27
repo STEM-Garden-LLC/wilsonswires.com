@@ -5,6 +5,7 @@ import { UrlObject } from "url";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import styles from "@/components/header/NavLink.module.css";
 
 type NavLinkHref<Route> =
     | UrlObject
@@ -38,7 +39,7 @@ export function NavLink<Route>({
                     "text-2xl",
                     "relative",
                     "w-fit",
-                    "hover-underline"
+                    styles.hoverUnderline
                 )}
                 prefetch
                 href={link}
