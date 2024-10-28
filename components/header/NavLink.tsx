@@ -10,14 +10,16 @@ import styles from "@/components/header/NavLink.module.css";
 type NavLinkHref<Route> =
     | UrlObject
     | __next_route_internal_types__.RouteImpl<Route>;
-export function NavLink<Route>({
+export default function NavLink<Route>({
     link,
     children,
     classes,
+    onClick,
 }: {
     link: NavLinkHref<Route>;
     children?: React.ReactNode;
     classes: string[];
+    onClick?: () => void;
 }) {
     // This needs to be a client component to use the usePathname hook
     const pathname = usePathname();
@@ -46,6 +48,7 @@ export function NavLink<Route>({
                 prefetch
                 href={link}
                 data-active={link === pathname}
+                onClick={onClick}
             >
                 {children ?? getFallback(link)}
             </Link>

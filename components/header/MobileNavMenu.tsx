@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
-import { NavLinks } from "./NavLinks";
+import NavLinks from "./NavLinks";
 
 export default function MobileNavMenu({
     open,
+    onClick,
 }: {
     open: boolean;
-    onToggleOpen: () => void;
+    onClick: () => void;
 }) {
     return (
         <ul
@@ -26,10 +27,12 @@ export default function MobileNavMenu({
                 "px-4",
                 "sm:hidden",
                 "sm:invisible",
-                "transition-[left]"
+                "transition-[left]",
+                "invisible",
+                "data-[open='true']:visible"
             )}
         >
-            <NavLinks classes={["text-red-800"]} />
+            <NavLinks onClick={onClick} classes={["text-red-800"]} />
         </ul>
     );
 }

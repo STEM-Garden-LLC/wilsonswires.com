@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import styles from "@/components/header/HamburgerMenu.module.css";
 
-export function HamburgerMenu({
+export default function HamburgerMenu({
     onToggleOpen,
     open,
 }: {
@@ -14,7 +14,8 @@ export function HamburgerMenu({
                 "focus-within:border-slate-100",
                 "rounded-md",
                 "h-fit",
-                "my-auto"
+                "my-auto",
+                "p-1"
             )}
             onClick={onToggleOpen}
             aria-expanded={open}

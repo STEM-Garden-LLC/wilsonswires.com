@@ -1,13 +1,19 @@
-import { NavLink } from "./NavLink";
+import NavLink from "./NavLink";
 
-export function NavLinks({ classes = [] }: { classes?: string[] }) {
+export default function NavLinks({
+    classes = [],
+    onClick,
+}: {
+    classes?: string[];
+    onClick?: () => void;
+}) {
     return (
         <>
-            <NavLink classes={classes} link="/">
+            <NavLink classes={classes} onClick={onClick} link="/">
                 Home
             </NavLink>
-            <NavLink classes={classes} link="/services" />
-            <NavLink classes={classes} link="/contact" />
+            <NavLink classes={classes} onClick={onClick} link="/services" />
+            <NavLink classes={classes} onClick={onClick} link="/contact" />
         </>
     );
 }

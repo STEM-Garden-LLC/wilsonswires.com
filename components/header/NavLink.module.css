@@ -13,7 +13,7 @@
       top: 100%;
       left: 0;
   
-      background-color: hsl(var(--logo-yellow-shaded));
+      background-color: hsl(var(--hover-bg-color, var(--logo-yellow-shaded)));
   
       height: 2px;
       width: 100%;

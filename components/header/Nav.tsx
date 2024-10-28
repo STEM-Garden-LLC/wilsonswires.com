@@ -1,5 +1,5 @@
 import DesktopMenu from "./DesktopMenu";
-import { Logo } from "./Logo";
+import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import { cn } from "@/lib/utils";
 
