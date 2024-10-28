@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { NavLink } from "./NavLink";
+import { NavLinks } from "./NavLinks";
 
 export default function DesktopMenu() {
     return (
@@ -7,15 +7,15 @@ export default function DesktopMenu() {
             className={cn(
                 "hidden",
                 "sm:flex",
-                "justify-between",
+                "gap-8",
+                "items-center",
                 "mx-auto",
+                "pl-10",
                 "container",
                 "text-logo-yellow-light"
             )}
         >
-            <NavLink link="/">Home</NavLink>
-            <NavLink link="/services" />
-            <NavLink link="/contact" />
+            <NavLinks classes={["text-3xl"]} />
         </ul>
     );
 }

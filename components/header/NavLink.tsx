@@ -13,9 +13,11 @@ type NavLinkHref<Route> =
 export function NavLink<Route>({
     link,
     children,
+    classes,
 }: {
     link: NavLinkHref<Route>;
     children?: React.ReactNode;
+    classes: string[];
 }) {
     // This needs to be a client component to use the usePathname hook
     const pathname = usePathname();
@@ -36,9 +38,9 @@ export function NavLink<Route>({
             <Link
                 className={cn(
                     "capitalize",
-                    "text-2xl",
                     "relative",
                     "w-fit",
+                    ...classes,
                     styles.hoverUnderline
                 )}
                 prefetch
