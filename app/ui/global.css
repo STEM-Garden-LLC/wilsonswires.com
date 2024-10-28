@@ -18,7 +18,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @layer base {
-  :root {
+    :root {
         --background: 0 0% 100%;
         --foreground: 224 71.4% 4.1%;
         --card: 0 0% 100%;
@@ -51,7 +51,7 @@ input[type="number"]::-webkit-outer-spin-button {
         --logo-yellow-light: 48 64.8% 64.3%;
         --logo-yellow-shaded: 34 59% 58.8%;
     }
-  .dark {
+    .dark {
         --background: 224 71.4% 4.1%;
         --foreground: 210 20% 98%;
         --card: 224 71.4% 4.1%;
@@ -80,10 +80,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+    * {
+        @apply border-border;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
 }
