@@ -9,18 +9,23 @@ export default function MobileNavMenu({
 }) {
     return (
         <ul
+            hidden={!open}
+            data-open={open}
             className={cn(
-                open ? "block" : "invisible",
-                open ? "opacity-100" : "opacity-0",
-                open ? "left-20" : "left-full",
+                "z-10",
+                "origin-top",
                 "absolute",
-                "-top-50",
-                "w-full",
+                "top-full",
+                "left-full",
+                "data-[open='true']:left-0",
                 "grid",
+                "w-full",
                 "gap-4",
                 "bg-slate-300",
                 "py-6",
                 "px-4",
+                "sm:hidden",
+                "sm:invisible",
                 "transition-[left]"
             )}
         >
