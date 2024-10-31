@@ -1,5 +1,7 @@
 import "@/app/ui/global.css";
 import { inter } from "@/app/ui/fonts";
+import { cn } from "@/lib/utils";
+import Header from "@/components/header/Header";
 
 export default function RootLayout({
     children,
@@ -8,7 +10,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${inter.className} antialiased`}>{children}</body>
+            <body className={cn(inter.className, "antialiased")}>
+                <Header />
+                <div className={cn("container", "mx-auto")}>{children}</div>
+            </body>
         </html>
     );
 }
